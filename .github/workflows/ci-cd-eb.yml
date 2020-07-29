@@ -47,8 +47,8 @@ jobs:
     - name: Create a new EV version
       run: |
        aws elasticbeanstalk create-application-version\
-       --application-name ${{env. APP_NAME}}\
-       --source-bundle $S3Bucket=${{env.EB_PACKEGE_S3_BACKET_NAME}},$S3Key=${{env.DEPLOY_PACKEGE_NAME}}\
+       --application-name ${{env.APP_NAME}}\
+       --source-bundle S3Bucket=${{env.EB_PACKEGE_S3_BACKET_NAME}},S3Key=${{env.DEPLOY_PACKEGE_NAME}}\
        --version-label "Ver-${{ github.sha }}" \
        --description "CommitSHA-${{ github.sha }}"  
      
