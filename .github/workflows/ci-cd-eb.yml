@@ -29,8 +29,8 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Create zip-file for EB
-      uses: zip -r ${{ env.DEPLOY_PACKEGE_NAME}} ./ -x *.git*
-    
+      run : zip -r ${{ env.DEPLOY_PACKEGE_NAME}} ./ -x *.git*
+                          
     - name: AWS configure
       uses: aws-actions/configure-aws-credentials/@v1
       with:
