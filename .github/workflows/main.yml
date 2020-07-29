@@ -4,9 +4,6 @@ name: CI CD Flask APP to AWS Elasticbeanstalk
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [ master ]
 env:
   EB_PACKEGE_S3_BACKET_NAME: "my-flask-app-ci-cd-github-actions"
   DEPLOY_PACKEGE_NAME      : "My-flask-app-${{github.sha}}.zip"
@@ -14,7 +11,9 @@ env:
   ENV_NAME: "My-flask-app-env"
   AWS_REGION: "eu-central-1"  
 
-
+on:
+  push:
+    branches: [ master ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
