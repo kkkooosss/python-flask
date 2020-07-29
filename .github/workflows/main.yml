@@ -33,7 +33,7 @@ jobs:
     
     - name: AWS configure
       uses: aws-actions/configure-aws-credentials/@v1
-        with:
+      with:
           aws-access-key-id : ${{secret.ACCESS_KEY_ID}}
           aws-secret-key-id : ${{secret.SECRET_ACCESS_KEY}}
           aws-region: ${{env.AWS_REGION}}
